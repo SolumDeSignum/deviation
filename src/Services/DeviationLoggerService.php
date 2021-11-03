@@ -28,7 +28,7 @@ class DeviationLoggerService
         $this->logger
             ->pushHandler(
                 new StreamHandler(
-                    storage_path("deviation/message-logged-$nameLog.log"),
+                    storage_path("deviation/log/stacktrace-$nameLog.log"),
                     Logger::DEBUG
                 )
             );

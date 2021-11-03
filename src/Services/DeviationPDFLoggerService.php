@@ -33,6 +33,6 @@ class DeviationPDFLoggerService
                     ->render()
             )
             ->setPaper('B4', 'landscape')
-            ->save(storage_path("deviation/pdf/message-logged-$messageLogged->nameLog.pdf"));
+            ->save(storage_path("deviation/pdf/stacktrace-$messageLogged->nameLog.pdf"));
     }
 }
