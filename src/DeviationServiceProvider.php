@@ -4,12 +4,29 @@ declare(strict_types=1);
 
 namespace SolumDeSignum\Deviation;
 
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use SolumDeSignum\Deviation\Actions\DirectoriesAction;
 use SolumDeSignum\Deviation\Providers\EventServiceProvider;
 
 class DeviationServiceProvider extends ServiceProvider
 {
     public string $nameSpace = 'solumdesignum/deviation';
+
+    private DirectoriesAction $directoriesAction;
+
+    /**
+     * Create a new service provider instance.
+     *
+     * @param Application $app
+     *
+     * @return void
+     */
+    public function __construct($app)
+    {
+        $this->directoriesAction = new DirectoriesAction();
+        parent::__construct($app);
+    }
 
     /**
      * Perform post-registration booting of services.
@@ -36,6 +53,8 @@ class DeviationServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->directoriesAction->run();
+
         $this->mergeConfigFrom(__DIR__ . '/../config/deviation.php', 'deviation');
 
         // Register the service the package provides.
