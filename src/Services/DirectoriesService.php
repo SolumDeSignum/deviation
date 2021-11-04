@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SolumDeSignum\Deviation\Services;
 
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class DirectoriesService
 {
@@ -15,11 +15,11 @@ class DirectoriesService
 
     public function create(string $directory): bool
     {
-        return Storage::makeDirectory($directory);
+        return File::makeDirectory($directory, 0775, true, true);
     }
 
     public function exist(string $directory): bool
     {
-        return Storage::exists($directory);
+        return File::isDirectory($directory);
     }
 }
