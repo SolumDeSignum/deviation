@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace SolumDeSignum\Deviation\Listeners;
 
 use App\Models\User;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Support\Facades\Notification;
+use SolumDeSignum\Deviation\Actions\DirectoriesAction;
 use SolumDeSignum\Deviation\DataTransferObject\DeviationReporterData;
 use SolumDeSignum\Deviation\Notifications\DeviationLoggedNotification;
 use SolumDeSignum\Deviation\Services\DeviationLoggerService;
@@ -23,11 +25,14 @@ class DeviationLoggedListener
 
     private DeviationLoggerService $deviationLoggerService;
 
+    private DirectoriesAction $directoriesAction;
+
     public function __construct()
     {
         $this->deviationReporterData = new DeviationReporterData();
         $this->deviationPDFLoggerService = new DeviationPDFLoggerService();
         $this->deviationLoggerService = new DeviationLoggerService();
+        $this->directoriesAction = new DirectoriesAction();
     }
 
     /**
@@ -36,6 +41,7 @@ class DeviationLoggedListener
      * @param MessageLogged $event
      *
      * @return void
+     * @throws BindingResolutionException
      */
     public function handle(MessageLogged $event): void
     {
@@ -45,6 +51,11 @@ class DeviationLoggedListener
         if (config('deviation.logger.api')) {
             $this->deviationReporterData
                 ->run($event);
+        }
+
+        if (config('deviation.logger.pdf') || config('deviation.logger.log')) {
+            $this->directoriesAction
+                ->run();
         }
 
         if (config('deviation.logger.pdf')) {

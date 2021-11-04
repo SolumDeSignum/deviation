@@ -7,7 +7,6 @@ namespace SolumDesignum\Deviation\Notifications;
 use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use SolumDeSignum\Deviation\Actions\DirectoriesAction;
 
 use function config;
 use function storage_path;
@@ -24,8 +23,6 @@ class DeviationLoggedNotification extends Notification
     public function __construct(MessageLogged $messageLogged)
     {
         $this->messagedLogged = $messageLogged;
-        (new DirectoriesAction())
-            ->run();
     }
 
     /**
