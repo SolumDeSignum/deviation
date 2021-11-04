@@ -6,7 +6,7 @@ namespace SolumDeSignum\Deviation\Actions;
 
 use SolumDeSignum\Deviation\Services\DirectoriesService;
 
-use function storage_path;
+use function app_path;
 
 class DirectoriesAction
 {
@@ -20,7 +20,7 @@ class DirectoriesAction
     public function run(): void
     {
         foreach ($this->directoriesService->directories as $directory) {
-            $directory = storage_path($directory);
+            $directory = app_path($directory);
 
             if (! $this->directoriesService->exist($directory)) {
                 $this->directoriesService->create($directory);

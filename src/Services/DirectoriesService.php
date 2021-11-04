@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Storage;
 class DirectoriesService
 {
     public array $directories = [
-        'deviation/pdf',
-        'deviation/log'
+        'storage/deviation/pdf',
+        'storage/deviation/log'
     ];
 
     public function create(string $directory): bool
