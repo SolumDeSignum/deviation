@@ -53,13 +53,13 @@ class DeviationLoggerService
         /**
          * @var ErrorException $exception
          */
-        $exception = $messageLogged->context['exception'];
+        $exception = $messageLogged->context['exception'] ?? null;
 
         $this
             ->pushHandler($messageLogged->nameLog)
             ->log(
-                $messageLogged->level,
-                $messageLogged->message,
+                $messageLogged->level ?? null,
+                $messageLogged->message ?? null,
                 $exception->__toString()
             );
 
