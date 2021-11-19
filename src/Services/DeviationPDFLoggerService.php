@@ -22,13 +22,13 @@ class DeviationPDFLoggerService
         /**
          * @var ErrorException $exception
          */
-        $exception = $messageLogged->context['exception'];
+        $exception = $messageLogged->context['exception'] ?? null;
 
         app()
             ->make('dompdf.wrapper')
             ->loadHtml(
                 View::make('solumdesignum/deviation::mail.exceptions', [
-                    'exception' => $exception->__toString()
+                    'exception' => $exception ? $exception->__toString() : null
                 ])
                     ->render()
             )
