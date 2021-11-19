@@ -60,7 +60,7 @@ class DeviationLoggerService
             ->log(
                 $messageLogged->level ?? null,
                 $messageLogged->message ?? null,
-                $exception->__toString()
+                $exception ? $exception->__toString() : null
             );
 
         return $this;
