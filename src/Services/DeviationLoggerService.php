@@ -36,14 +36,16 @@ class DeviationLoggerService
         return $this;
     }
 
-    public function log(string $level, string $message, string $stackTrace): DeviationLoggerService
+    public function log(string $level, ?string $message, ?string $stackTrace): DeviationLoggerService
     {
-        $this->logger
-            ->log(
-                $level,
-                $message,
-                explode(PHP_EOL, $stackTrace)
-            );
+        if ($message && $stackTrace) {
+            $this->logger
+                ->log(
+                    $level,
+                    $message,
+                    explode(PHP_EOL, $stackTrace)
+                );
+        }
 
         return $this;
     }
