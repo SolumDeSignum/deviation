@@ -10,7 +10,6 @@ return [
     ],
     'notifications' => [
         'enabled' => true,
-        'priority' => 1,
         'attachments' => [
             'stack_trace' => true
         ],

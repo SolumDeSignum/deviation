@@ -49,7 +49,6 @@ class DeviationLoggedNotification extends Notification
         $nameLog = $this->messagedLogged->nameLog;
 
         $mailMessage = (new MailMessage())
-            ->priority(config('deviation.notifications.priority'))
             ->level($this->messagedLogged->level)
             ->cc(config('deviation.notifications.notifiable.cc'))
             ->bcc(config('deviation.notifications.notifiable.bcc'))
