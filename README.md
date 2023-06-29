@@ -1,9 +1,9 @@
 # Deviation
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/solumdesignum/devination/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/solumdesignum/devination/?branch=master)
-[![Total Downloads](https://poser.pugx.org/solumdesignum/deviation/downloads)](https://packagist.org/packages/solumdesignum/devination)
-[![Latest Stable Version](https://poser.pugx.org/solumdesignum/devination/v/stable)](https://packagist.org/packages/solumdesignum/devination)
-[![Latest Unstable Version](https://poser.pugx.org/solumdesignum/devination/v/unstable)](https://packagist.org/packages/solumdesignum/devination)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/solumdesignum/deviation/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/solumdesignum/deviation/?branch=master)
+[![Total Downloads](https://poser.pugx.org/solumdesignum/deviation/downloads)](https://packagist.org/packages/solumdesignum/deviation)
+[![Latest Stable Version](https://poser.pugx.org/solumdesignum/deviation/v/stable)](https://packagist.org/packages/solumdesignum/deviation)
+[![Latest Unstable Version](https://poser.pugx.org/solumdesignum/deviation/v/unstable)](https://packagist.org/packages/solumdesignum/deviation)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 ## Introduction
