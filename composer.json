@@ -1,7 +1,14 @@
 {
     "name": "solumdesignum/deviation",
     "description": "laravel lightweight deviation monitoring tool.",
-    "license": "Proprietary software",
+    "keywords": [
+        "laravel",
+        "deviation",
+        "laravel-deviation",
+        "laravel-deviation-monitoring",
+        "laravel-errors-monitoring"
+    ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Oskars Germovs",
@@ -10,13 +17,6 @@
         }
     ],
     "homepage": "https://github.com/solumdesignum/deviation",
-    "keywords": [
-        "laravel",
-        "deviation",
-        "laravel-deviation",
-        "laravel-deviation-monitoring",
-        "laravel-errors-monitoring"
-    ],
     "require": {
         "illuminate/support": "~5|~6|~7|~8|~9|~10",
         "php": "^7.4|^8.0|^8.1|^8.2",

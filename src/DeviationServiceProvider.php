@@ -40,7 +40,7 @@ class DeviationServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('deviation', function ($app) {
-            return new Deviation;
+            return new Deviation();
         });
 
         $this->app->register(EventServiceProvider::class);
