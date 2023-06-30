@@ -19,12 +19,12 @@ composer require solumdesignum/deviation
 
 Next, publish configuration using the vendor:publish command:
 ``` bash
-php artisan vendor:publish --provider="SolumDeSignum\Scenarios\DeviationServiceProvider"
+php artisan vendor:publish --provider="SolumDeSignum\DeviationServiceProvider"
 ```
 
 ## Contributing
 
-Thank you for considering contributing to the PackageEnvLoader. You can read the contribution
+Thank you for considering contributing to the Deviation. You can read the contribution
 guidelines [here](CONTRIBUTING.md)
 
 ## Security
@@ -34,7 +34,6 @@ If you discover any security related issues, please email to solumdesignum@gmail
 ## Credits
 
 - [Oskars Germovs](http://solum-designum.eu) ([Twitter](https://twitter.com/Solum_DeSignum))
-- [All Contributors][link-contributors]
 
 ## License
 
