@@ -19,7 +19,7 @@ composer require solumdesignum/deviation
 
 Next, publish configuration using the vendor:publish command:
 ``` bash
-php artisan vendor:publish --provider="SolumDeSignum\DeviationServiceProvider"
+php artisan vendor:publish --provider="SolumDeSignum\Deviation\DeviationServiceProvider"
 ```
 
 ## Contributing
